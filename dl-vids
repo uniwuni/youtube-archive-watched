@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "$1" || exit
+yt-dlp --flat-playlist --cookies=.cookies.txt https://www.youtube.com/feed/history --print "%(url)s" --playlist-end=100 | yt-dlp -a - --download-archive=.archive.txt -f'bestvideo[height<=720]+bestaudio/best[height<=720]'
+
